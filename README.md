@@ -38,7 +38,7 @@ Some images.
 
 This is a php project based on a social network.
 
-In this social network, you can create and delete your own posts, follow, write, and like the posts of other users logged into the social network. You can do all this if you log in before entering the web.
+In this social network, you can create and delete your own posts, follow, write, and like the posts of other users logged into the social network. You can do all this if you register before entering the web.
 
 You can also see the statistics of the users and your own about the people who follow you, the people you follow, the likes you have made to the posts of other users and the posts you have created.
 
