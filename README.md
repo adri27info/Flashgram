@@ -63,7 +63,7 @@ To run this project, we need the following steps:
 
 - Go to your browser to the path of localhost/phpmyadmin and you will see the phpmyadmin database manager running.
 
-- Once inside the phpmyadmin database manager, you have to click the import option. You must select the sql file, which is located in the recursos/utilidades/conectividad/bbdd/sql folder of this project, which is the following: https://github.com/adri27info/Flashgram/blob/master/recursos/conectividad/bbdd/sql/flashgram.sql
+- Once inside the phpmyadmin database manager, you have to click the import option. You must select the sql file, which is located in the recursos/utilidades/conectividad/bbdd/sql folder of this project, which is the following: https://github.com/adri27info/Flashgram/blob/master/recursos/utilidades/conectividad/bbdd/sql/flashgram.sql
 
 - Once the database is imported through the sql file, we go to the htdocs folder and create the apps/php/ folder and put the Flashgram project inside the php folder, so that everything works. Once this is done we put in the browser http://localhost/apps/php/Flashgram and we will see that the application will execute correctly.
 
