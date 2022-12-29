@@ -28,6 +28,10 @@ Some images.
 
 ---
 
+![Image text](recursos/assets/images/notificaciones.png)
+
+---
+
 ## Table of contents
 
 - [Description](#description)
