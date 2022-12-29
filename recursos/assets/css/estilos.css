@@ -1,0 +1,1806 @@
+/* ------------------------ GENERALES ------------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: silver;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 60px;
+}
+span.boton_subir {
+  background-color: rgb(49, 49, 49);
+  padding: 10px;
+  color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 10px;
+  z-index: 10;
+  border-radius: 50%;
+}
+/* ------------------------ ERROR DE PAGINA ------------------------ */
+section.error_pagina {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(49, 49, 49);
+}
+section.error_pagina div.error_pagina_logo {
+  width: 80px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+div.error_pagina_logo img {
+  width: 100%;
+  margin-left: 5px;
+  object-fit: cover;
+}
+section.error_pagina p.error_pagina_parrafo {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+section.error_pagina a.error_pagina_enlace {
+  color: white;
+}
+/* ------------------------ LOGIN, REGISTRO ------------------------ */
+header.cabecera_auth {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 2px solid black;
+  background-color: rgb(49, 49, 49);
+}
+header.cabecera_auth div.cabecera_auth_logo {
+  width: 80px;
+}
+div.cabecera_auth_logo img {
+  width: 100%;
+  margin-left: 9px;
+  object-fit: cover;
+}
+div.cabecera_auth_enlaces ul.cabecera_auth_enlaces_lista {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+ul.cabecera_auth_enlaces_lista li a {
+  text-decoration: none;
+  color: white;
+}
+footer {
+  width: 100%;
+  background-color: black;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+footer p {
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+}
+form.formulario_registro,
+form.formulario_login {
+  background-color: rgb(167, 165, 165);
+  width: 90%;
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid black;
+}
+form.formulario_registro h2,
+form.formulario_login h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: white;
+  background-color: rgb(49, 49, 49);
+  padding: 10px;
+}
+form.formulario_registro label,
+form.formulario_login label {
+  display: block;
+  margin: 15px auto 10px auto;
+  text-align: center;
+  font-size: 18px;
+}
+form.formulario_registro input[type="text"],
+form.formulario_registro input[type="password"],
+form.formulario_registro input[type="submit"],
+form.formulario_login input[type="text"],
+form.formulario_login input[type="password"],
+form.formulario_login input[type="submit"] {
+  display: block;
+  text-align: center;
+  padding: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+  font-size: 16.5px;
+}
+form.formulario_registro input[type="submit"],
+form.formulario_login input[type="submit"] {
+  background-color: #1c3997f6;
+  color: white;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+form.formulario_registro div.contenedor_nombre_validacion,
+form.formulario_registro div.contenedor_correo_validacion,
+form.formulario_registro div.contenedor_password_validacion,
+form.formulario_login div.contenedor_correo_validacion,
+form.formulario_login div.contenedor_password_validacion {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+  font-weight: bolder;
+  background-color: rgb(49, 49, 49);
+  color: white;
+  margin-bottom: 20px;
+}
+section.verificacion {
+  text-align: center;
+  font-weight: bolder;
+  background-color: #111111bd;
+  padding: 5px;
+  width: 90%;
+  max-width: 500px;
+  margin: 60px auto;
+}
+section.verificacion p.verificacion_parrafo {
+  color: white;
+}
+p.parrafoToken {
+  font-weight: bolder;
+  text-align: center;
+  font-size: 17px;
+}
+/* ------------------------ MAIN ------------------------ */
+header.cabecera_main {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 2px solid black;
+  background-color: rgb(49, 49, 49);
+  gap: 20px;
+}
+/* ------------------------ MAIN - CENTRO-SUPERIOR ------------------------ */
+header.cabecera_main div.cabecera_main_centro_superior {
+  width: 80px;
+}
+div.cabecera_main_centro_superior img {
+  width: 100%;
+  object-fit: cover;
+}
+/* ------------------------ MAIN - CENTRO-INFERIOR-IZQ ------------------------ */
+header.cabecera_main div.cabecera_main_centro_inferior {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 17px;
+}
+div.cabecera_main_centro_inferior
+  div.cabecera_main_centro_inferior_enlaces_izquierda {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+div.cabecera_main_centro_inferior_enlaces_izquierda
+  div.cabecera_main_centro_inferior_enlaces_izquierda_home {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-self: center;
+  gap: 5px;
+}
+div.cabecera_main_centro_inferior_enlaces_izquierda_home span {
+  display: block;
+  color: white;
+}
+div.cabecera_main_centro_inferior_enlaces_izquierda_home a {
+  display: block;
+  color: white;
+  text-align: center;
+  align-self: center;
+  text-decoration: none;
+  margin-top: 3px;
+}
+div.cabecera_main_centro_inferior_enlaces_izquierda_home a:hover {
+  text-decoration: underline;
+}
+div.cabecera_main_centro_inferior_enlaces_izquierda
+  div.cabecera_main_centro_inferior_enlaces_izquierda_gente {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-self: center;
+  gap: 5px;
+}
+div.cabecera_main_centro_inferior_enlaces_izquierda_gente span {
+  display: block;
+  color: white;
+  margin-top: 3px;
+}
+div.cabecera_main_centro_inferior_enlaces_izquierda_gente a {
+  display: block;
+  color: white;
+  text-align: center;
+  align-self: center;
+  text-decoration: none;
+  margin-top: 4px;
+}
+div.cabecera_main_centro_inferior_enlaces_izquierda_gente a:hover {
+  text-decoration: underline;
+}
+div.cabecera_main_centro_inferior_buscar form {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+div.cabecera_main_centro_inferior_buscar input {
+  padding: 5px;
+  font-size: 16px;
+}
+div.cabecera_main_centro_inferior_buscar button {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+div.cabecera_main_centro_inferior_buscar span {
+  width: 30px;
+}
+/* ------------------------ MAIN - CENTRO-INFERIOR-DER ------------------------ */
+div.cabecera_main_centro_inferior
+  div.cabecera_main_centro_inferior_enlaces_derecha {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+div.cabecera_main_centro_inferior_enlaces_derecha
+  div.cabecera_main_centro_inferior_enlaces_derecha_mensajes {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+div.cabecera_main_centro_inferior_enlaces_derecha_mensajes span {
+  display: block;
+  color: white;
+  margin-top: 3px;
+}
+div.cabecera_main_centro_inferior_enlaces_derecha_mensajes a {
+  display: block;
+  color: white;
+  text-align: center;
+  align-self: center;
+  margin-top: 5px;
+  text-decoration: none;
+}
+div.cabecera_main_centro_inferior_enlaces_derecha_mensajes a:hover {
+  text-decoration: underline;
+}
+div.cabecera_main_centro_inferior_enlaces_derecha
+  div.cabecera_main_centro_inferior_enlaces_derecha_notificaciones {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-self: center;
+  gap: 5px;
+}
+div.cabecera_main_centro_inferior_enlaces_derecha_notificaciones span {
+  display: block;
+  color: white;
+  margin-top: 3px;
+}
+div.cabecera_main_centro_inferior_enlaces_derecha_notificaciones a {
+  display: block;
+  color: white;
+  margin-top: 6px;
+  text-decoration: none;
+}
+div.cabecera_main_centro_inferior_enlaces_derecha_notificaciones a:hover {
+  text-decoration: underline;
+}
+div.cabecera_main_centro_inferior div.cabecera_main_centro_inferior_opciones {
+  margin-top: 5.5px;
+  width: 100%;
+  text-align: center;
+}
+div.cabecera_main_centro_inferior_opciones .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown .dropbtn {
+  color: white;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  gap: 10px;
+}
+.dropbtn img {
+  width: 40px;
+  border-radius: 50%;
+  height: 40px;
+  object-fit: cover;
+}
+.dropbtn .material-symbols-outlined:hover {
+  cursor: pointer;
+}
+.dropdown .dropdown-content {
+  position: absolute;
+  width: 400px;
+  background-color: #111111bd;
+  z-index: 1;
+  top: 45px;
+  display: none;
+}
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+.dropdown-content a:hover {
+  text-decoration: underline;
+}
+.dropdown-content .dropdown-content-perfil,
+.dropdown-content .dropdown-content-datos,
+.dropdown-content .dropdown-content-sesion {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.dropdown-content-perfil span,
+.dropdown-content-datos span,
+.dropdown-content-sesion span {
+  color: white;
+}
+/* ------------------------ MAIN - HOME ------------------------ */
+section.home {
+  width: 95%;
+  margin: 30px auto 30px auto;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 5px;
+}
+section.home p.home_parrafo_error {
+  padding: 10px;
+  text-align: center;
+  display: block;
+  margin: auto;
+  background-color: white;
+  width: 100%;
+  border-radius: 10px;
+}
+section.home div.home_timeline {
+  background-color: white;
+  width: 60%;
+  border-radius: 10px;
+}
+div.home_timeline h1.home_timeline_titulo {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+div.home_timeline hr.home_timeline_separador {
+  width: 100%;
+  margin-bottom: 10px;
+  color: black;
+}
+div.home_timeline p.home_timeline_parrafo_error_post {
+  padding: 10px;
+  color: red;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+div.home_timeline p.home_timeline_parrafo_exito_post {
+  padding: 10px;
+  color: green;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+div.home_timeline p.home_timeline_parrafo_posts {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+div.home_timeline div.home_timeline_contenido_posts {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: 2px solid black;
+  max-width: 600px;
+  width: 90%;
+  margin: 10px auto 30px auto;
+  border-radius: 10px;
+}
+div.home_timeline_contenido_posts div.home_timeline_contenido_posts_datos {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background-color: silver;
+}
+div.home_timeline_contenido_posts_datos
+  div.home_timeline_contenido_posts_datos_imagen {
+  width: 100px;
+}
+div.home_timeline_contenido_posts_datos_imagen img {
+  width: 100%;
+  border-radius: 50%;
+  height: 100px;
+  object-fit: cover;
+}
+div.home_timeline_contenido_posts_datos
+  div.home_timeline_contenido_posts_datos_usuario {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  font-weight: bolder;
+}
+div.home_timeline_contenido_posts_datos_usuario a {
+  text-decoration: none;
+}
+div.home_timeline_contenido_posts_datos_usuario a:hover {
+  text-decoration: underline;
+}
+div.home_timeline_contenido_posts_datos
+  div.home_timeline_contenido_posts_datos_likes {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+div.home_timeline_contenido_posts_datos_likes span {
+  color: silver;
+  cursor: pointer;
+}
+div.home_timeline_contenido_posts_datos
+  div.home_timeline_contenido_posts_datos_borrar
+  button {
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+div.home_timeline_contenido_posts
+  div.home_timeline_contenido_posts_informacion {
+  text-align: justify;
+  padding: 10px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+div.home_timeline_contenido_posts_informacion img {
+  width: 100%;
+  object-fit: cover;
+}
+section.home div.home_posts {
+  width: 35%;
+}
+div.home_posts div.home_posts_perfil {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+div.home_posts_perfil div.home_posts_perfil_imagen {
+  width: 100px;
+}
+div.home_posts_perfil_imagen img {
+  width: 100%;
+  border-radius: 50%;
+  height: 100px;
+  object-fit: cover;
+}
+div.home_posts_perfil div.home_posts_perfil_datos {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+  font-size: 17px;
+}
+div.home_posts_perfil_datos a {
+  font-weight: bolder;
+  text-decoration: none;
+}
+div.home_posts_perfil_datos a:hover {
+  text-decoration: underline;
+}
+div.home_posts_perfil_datos span {
+  font-weight: bolder;
+}
+hr.home_posts_perfil_separador {
+  width: 100%;
+}
+div.home_posts_perfil div.home_post_perfil_estadisticas {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+div.home_post_perfil_estadisticas div.home_post_perfil_estadisticas_following,
+div.home_post_perfil_estadisticas div.home_post_perfil_estadisticas_followers,
+div.home_post_perfil_estadisticas div.home_post_perfil_estadisticas_posts,
+div.home_post_perfil_estadisticas div.home_post_perfil_estadisticas_likes {
+  font-weight: bolder;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+div.home_post_perfil_estadisticas_following a,
+div.home_post_perfil_estadisticas_followers a,
+div.home_post_perfil_estadisticas_posts a,
+div.home_post_perfil_estadisticas_likes a {
+  text-decoration: none;
+}
+div.home_post_perfil_estadisticas_following a:hover,
+div.home_post_perfil_estadisticas_followers a:hover,
+div.home_post_perfil_estadisticas_posts a:hover,
+div.home_post_perfil_estadisticas_likes a:hover {
+  text-decoration: underline;
+}
+div.home_posts div.home_posts_contenido {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  border-radius: 10px;
+}
+div.home_posts_contenido h1.home_posts_contenido_titulo {
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+}
+div.home_posts_contenido hr.home_posts_contenido_titulo_seperador {
+  width: 100%;
+}
+div.home_posts_contenido form.home_posts_contenido_formulario {
+  width: 100%;
+  padding: 10px;
+}
+form.home_posts_contenido_formulario label {
+  width: 100%;
+  display: block;
+  margin: 10px 0px;
+  font-weight: bold;
+  text-align: center;
+}
+form.home_posts_contenido_formulario textarea {
+  width: 90%;
+  display: block;
+  margin: 20px auto;
+  resize: none;
+  padding: 10px;
+  border: 2px solid rgb(49, 49, 49);
+}
+form.home_posts_contenido_formulario textarea:focus {
+  outline: none !important;
+  border: 2px solid rgb(49, 49, 49);
+}
+form.home_posts_contenido_formulario input[type="file"] {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  width: 100%;
+}
+form.home_posts_contenido_formulario input[type="submit"] {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(49, 49, 49);
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  width: 200px;
+  font-size: 17px;
+}
+/* ------------------------ MAIN - USUARIOS ------------------------ */
+section.usuarios {
+  background-color: white;
+  width: 95%;
+  margin: 30px auto 30px auto;
+  border-radius: 10px;
+}
+section.usuarios h1.usuarios_titulo {
+  width: 100%;
+  padding: 10px;
+  margin-top: 30px;
+}
+section.usuarios span.usuarios_total {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: bolder;
+}
+section.usuarios span.usuario_encontrado {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  color: red;
+}
+section.usuarios hr.usuarios_separador {
+  width: 100%;
+  margin-bottom: 10px;
+}
+section.usuarios div.usuarios_informacion {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+div.usuarios_informacion div.usuarios_informacion_datos {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+div.usuarios_informacion_datos img.usuarios_informacion_datos_imagen {
+  width: 100px;
+  margin-left: 10px;
+  border-radius: 50%;
+  height: 100px;
+  object-fit: cover;
+}
+div.usuarios_informacion_datos span.usuarios_informacion_datos_nombre {
+  font-size: 17px;
+  font-weight: bolder;
+}
+span.usuarios_informacion_datos_nombre a {
+  text-decoration: none;
+}
+span.usuarios_informacion_datos_nombre a:hover {
+  text-decoration: underline;
+}
+div.usuarios_informacion div.usuarios_informacion_follows {
+  background-color: rgb(49, 49, 49);
+  margin-right: 10px;
+  border-radius: 5px;
+}
+div.usuarios_informacion_follows div.usuarios_informacion_follow_contenedor {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+div.usuarios_informacion_follows
+  div.usuarios_informacion_follow_contenedor:hover {
+  cursor: pointer;
+}
+div.usuarios_informacion_follow_contenedor
+  span.usuarios_informacion_follow_contenedor_texto {
+  color: white;
+  font-weight: bolder;
+  font-size: 17px;
+}
+/* ------------------------ MAIN - DATOS ------------------------ */
+section.datos {
+  background-color: white;
+  width: 95%;
+  margin: 30px auto 30px auto;
+  border-radius: 10px;
+  padding: 10px 30px 10px 30px;
+}
+section.datos h1.datos_titulo {
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+section.datos hr.datos_separador {
+  width: 100%;
+  margin-bottom: 10px;
+  color: black;
+}
+section.datos p.parrafo_datos_error {
+  padding: 10px;
+  color: red;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+section.datos p.parrafo_datos_exito {
+  padding: 10px;
+  color: green;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+section.datos div.datos_perfil {
+  margin: 30px auto;
+  max-width: 700px;
+  width: 90%;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+div.datos_perfil form.datos_perfil_formulario {
+  width: 100%;
+  font-size: 17px;
+}
+form.datos_perfil_formulario label {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  padding: 7px;
+  font-weight: bolder;
+}
+form.datos_perfil_formulario input {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  width: 90%;
+  padding: 7px;
+  font-size: 17px;
+}
+form.datos_perfil_formulario textarea {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  resize: none;
+  padding: 7px;
+  width: 90%;
+}
+form.datos_perfil_formulario input[type="submit"] {
+  cursor: pointer;
+  background-color: rgb(49, 49, 49);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+form.datos_perfil_formulario div.datos_perfil_formulario_nombre {
+  background-color: rgb(49, 49, 49);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: bolder;
+  color: white;
+  text-align: center;
+  margin: 10px auto;
+  width: 90%;
+  padding: 7px;
+}
+form.datos_perfil_formulario div.datos_perfil_formulario_biografia {
+  background-color: rgb(49, 49, 49);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-align: center;
+  margin: 10px auto;
+  width: 90%;
+  padding: 7px;
+}
+/* ------------------------ USUARIO ------------------------ */
+section.usuario {
+  background-color: white;
+  width: 95%;
+  margin: 30px auto 30px auto;
+  border-radius: 10px;
+}
+section.usuario p.usuario_parrafo_error_post,
+section.usuario p.usuario_parrafo_error_usuario_encontrado,
+section.usuario p.usuario_parrafo_redireccion {
+  padding: 10px;
+  color: red;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+section.usuario p.usuario_parrafo_exito_post {
+  padding: 10px;
+  color: green;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+p.usuario_parrafo_exito_post a,
+p.usuario_parrafo_error_post a,
+p.usuario_parrafo_redireccion a {
+  text-decoration: none;
+}
+section.usuario p.usuario_parrafo_conteo {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+section.usuario div.usuario_datos {
+  width: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+div.usuario_datos div.usuario_datos_biografia {
+  max-width: 600px;
+  width: 90%;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+div.usuario_datos_biografia div.usuario_datos_biografia_imagen {
+  width: 100px;
+}
+div.usuario_datos_biografia_imagen img {
+  width: 100%;
+  border-radius: 50%;
+  height: 100px;
+  object-fit: cover;
+}
+div.usuario_datos_biografia div.usuario_datos_biografia_perfil {
+  background-color: rgb(49, 49, 49);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px;
+  color: white;
+  border-radius: 5px;
+  gap: 10px;
+}
+div.usuario_datos_biografia_perfil span {
+  font-weight: bolder;
+}
+div.usuario_datos_biografia_perfil span.usuario_datos_biografia_perfi_propio {
+  color: rgb(8, 152, 248);
+}
+div.usuario_datos_biografia
+  div.usuario_datos_biografia_stats_contenedor_follow {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+div.usuario_datos_biografia_stats_contenedor_follow
+  div.usuario_datos_biografia_stats_contenedor_follow_following {
+  background-color: rgb(49, 49, 49);
+  padding: 7px;
+  color: white;
+  border-radius: 5px;
+}
+div.usuario_datos_biografia_stats_contenedor_follow
+  div.usuario_datos_biografia_stats_contenedor_follow_follower {
+  background-color: rgb(49, 49, 49);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 7px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+div.usuario_datos_biografia_stats_contenedor_follow_follower
+  span.usuario_datos_biografia_stats_contenedor_follow_follower_texto {
+  align-self: center;
+  color: white;
+}
+div.usuario_datos_biografia div.usuario_datos_biografia_nombres {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: bolder;
+}
+div.usuario_datos div.usuario_datos_stats {
+  max-width: 600px;
+  width: 90%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+div.usuario_datos_stats hr.usuario_datos_stats_separador {
+  width: 100%;
+  margin: 10px 0px;
+}
+div.usuario_datos_stats div.usuario_datos_stats_following,
+div.usuario_datos_stats div.usuario_datos_stats_followers,
+div.usuario_datos_stats div.usuario_datos_stats_posts,
+div.usuario_datos_stats div.usuario_datos_stats_likes {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  gap: 5px;
+}
+div.usuario_datos_stats_following a,
+div.usuario_datos_stats_followers a,
+div.usuario_datos_stats_posts a,
+div.usuario_datos_stats_likes a {
+  text-decoration: none;
+}
+div.usuario_datos_stats_following a:hover,
+div.usuario_datos_stats_followers a:hover,
+div.usuario_datos_stats_posts a:hover,
+div.usuario_datos_stats_likes a:hover {
+  text-decoration: underline;
+}
+section.usuario div.usuario_posts {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  max-width: 600px;
+  width: 90%;
+  border: 2px solid black;
+  margin: 10px auto 30px auto;
+  border-radius: 10px;
+}
+div.usuario_posts p.usuario_posts_conteo {
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+div.usuario_posts div.usuario_posts_datos {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  background-color: silver;
+}
+div.usuario_posts_datos div.usuario_posts_datos_imagen {
+  width: 100px;
+}
+div.usuario_posts_datos_imagen img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  height: 100px;
+}
+div.usuario_posts_datos div.usuario_posts_datos_usuario {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  font-weight: bolder;
+}
+
+div.usuario_posts_datos_usuario a {
+  text-decoration: none;
+}
+
+div.usuario_posts_datos_usuario a:hover {
+  text-decoration: underline;
+}
+
+div.usuario_posts_datos div.usuario_posts_datos_likes {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+div.usuario_posts_datos_likes span {
+  color: silver;
+  cursor: pointer;
+}
+div.usuario_posts_datos div.usuario_posts_datos_borrar {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  font-weight: bolder;
+}
+div.usuario_posts_datos_borrar button {
+  background: none;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+div.usuarios_posts div.usuario_posts_informacion {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+div.usuario_posts_informacion p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+div.usuarios_post_informacion img {
+  width: 100%;
+  object-fit: cover;
+}
+/* ------------------------ ESTADISTICAS ------------------------ */
+section.estadisticas {
+  background-color: white;
+  width: 95%;
+  margin: 30px auto 30px auto;
+  border-radius: 10px;
+  padding: 10px 30px 10px 30px;
+}
+section.estadisticas p.estadisticas_usuario_error {
+  padding: 10px;
+  color: red;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+p.estadisticas_usuario_error a {
+  text-decoration: none;
+}
+div.estadisticas_following h1.estadisticas_following_titulo,
+div.estadisticas_followers h1.estadisticas_followers_titulo,
+div.estadisticas_posts h1.estadisticas_posts_titulo,
+div.estadisticas_likes h1.estadisticas_likes_titulo {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 21px;
+  text-align: center;
+}
+div.estadisticas_following span.estadisticas_following_total,
+div.estadisticas_followers span.estadisticas_followers_total,
+div.estadisticas_posts span.estadisticas_posts_total,
+div.estadisticas_likes span.estadisticas_likes_total {
+  width: 100%;
+  font-weight: bolder;
+  padding: 10px;
+  text-align: center;
+}
+div.estadisticas_following hr.estadisticas_following_separador,
+div.estadisticas_followers hr.estadisticas_followers_separador,
+div.estadisticas_posts hr.estadisticas_posts_separador,
+div.estadisticas_likes hr.estadisticas_likes_separador {
+  width: 100%;
+  margin-bottom: 10px;
+  color: black;
+}
+section.estadisticas div.estadisticas_following,
+section.estadisticas div.estadisticas_followers {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 700px;
+  margin: 20px auto 50px auto;
+  width: 90%;
+}
+div.estadisticas_following div.estadisticas_following_datos,
+div.estadisticas_followers div.estadisticas_followers_datos {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+div.estadisticas_following_datos img,
+div.estadisticas_followers_datos img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+div.estadisticas_following_datos span,
+div.estadisticas_followers_datos span {
+  font-size: 17px;
+  font-weight: bolder;
+  text-align: center;
+}
+div.estadisticas_following_datos a,
+div.estadisticas_followers_datos a {
+  text-decoration: none;
+}
+section.estadisticas div.estadisticas_posts,
+section.estadisticas div.estadisticas_likes {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+  max-width: 700px;
+  margin: 20px auto 50px auto;
+  width: 90%;
+}
+div.estadisticas_posts div.estadisticas_posts_datos,
+div.estadisticas_likes div.estadisticas_likes_datos {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  gap: 20px;
+}
+div.estadisticas_posts_datos_imagen div.estadisticas_posts_datos_imagen_data,
+div.estadisticas_likes_datos_imagen div.estadisticas_likes_datos_imagen_data {
+  width: 100px;
+}
+div.estadisticas_posts_datos_imagen_data img,
+div.estadisticas_likes_datos_imagen_data img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+div.estadisticas_posts_datos div.estadisticas_posts_datos_usuario,
+div.estadisticas_likes_datos div.estadisticas_likes_datos_usuario {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 5px;
+  font-weight: bolder;
+  width: 100%;
+  text-align: center;
+}
+div.estadisticas_posts_datos div.estadisticas_posts_datos_informacion,
+div.estadisticas_likes_datos div.estadisticas_likes_datos_informacion {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+div.estadisticas_posts_datos_informacion p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+div.estadisticas_likes_datos_informacion p {
+  text-align: center;
+}
+/* ------------------------ MENSAJES ------------------------ */
+section.mensajes {
+  background-color: white;
+  width: 95%;
+  margin: 30px auto 30px auto;
+  border-radius: 10px;
+  padding-bottom: 70px;
+}
+section.mensajes h1.mensajes_titulo {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+section.mensajes div.mensajes {
+  max-width: 700px;
+  width: 90%;
+  margin: 10px auto;
+}
+div.mensajes div.mensajes_enviar {
+  padding: 10px;
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 10px;
+}
+div.mensajes_enviar p.mensajes_error {
+  padding: 10px;
+  color: red;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+div.mensajes_enviar p.mensajes_exito {
+  padding: 10px;
+  color: green;
+  margin-bottom: 10px;
+  font-weight: bolder;
+  text-align: center;
+}
+div.mensajes_enviar span.mensajes_enviar_texto {
+  font-weight: bolder;
+  padding: 10px;
+  margin-top: 10px;
+  display: block;
+  font-size: 17px;
+  text-align: center;
+}
+div.mensajes_enviar form.formulario_mensaje {
+  width: 100%;
+  font-size: 17px;
+  margin: 10px 0px;
+}
+form.formulario_mensaje label {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  padding: 7px;
+  font-weight: bolder;
+  width: 90%;
+}
+form.formulario_mensaje select {
+  width: 90%;
+  padding: 7px;
+  font-size: 17px;
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+}
+form.formulario_mensaje select option {
+  text-align: center;
+}
+form.formulario_mensaje input {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  width: 90%;
+  padding: 7px;
+  font-size: 17px;
+}
+form.formulario_mensaje textarea {
+  display: block;
+  text-align: center;
+  margin: 10px auto;
+  resize: none;
+  padding: 7px;
+  width: 90%;
+}
+form.formulario_mensaje div.formulario_mensaje_contenido {
+  background-color: rgb(49, 49, 49);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-weight: bolder;
+  color: white;
+  text-align: center;
+  margin: 10px auto;
+  width: 90%;
+  padding: 7px;
+}
+form.formulario_mensaje input[type="submit"] {
+  cursor: pointer;
+  background-color: rgb(49, 49, 49);
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+div.mensajes div.mensajes_enviar_enlaces {
+  padding: 10px;
+  width: 100%;
+  margin: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+div.mensajes_enviar_enlaces a.mensajes_enlace_enviados {
+  display: block;
+  padding: 10px;
+  margin: 10px;
+  text-decoration: none;
+  background-color: rgb(49, 49, 49);
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 200px;
+  text-align: center;
+}
+section.mensajes a.mensajes_enlace_enviados:hover {
+  text-decoration: underline;
+}
+/* ------------------------ MENSAJES ENVIADOS ------------------------ */
+section.mensajes_enviados {
+  background-color: white;
+  width: 95%;
+  margin: 30px auto 30px auto;
+  border-radius: 10px;
+  padding-bottom: 70px;
+}
+section.mensajes_enviados p.mensajes_enviados_parrafo {
+  padding: 10px;
+  font-weight: bolder;
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+}
+section.mensajes_enviados h1.mensajes_enviados_titulo {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+section.mensajes_enviados div.mensajes_enviados_contenedor {
+  max-width: 700px;
+  width: 90%;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 10px auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+div.mensajes_enviados_contenedor span.mensajes_enviados_contenedor_total {
+  font-weight: bolder;
+  padding: 10px;
+  margin-top: 10px;
+  display: block;
+  font-size: 17px;
+  text-align: center;
+  width: 100%;
+}
+div.mensajes_enviados_contenedor div.mensajes_enviados_contenedor_datos {
+  width: 90%;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
+div.mensajes_enviados_contenedor_datos
+  div.mensajes_enviados_contenedor_datos_imagenes {
+  width: 100%;
+  background-color: silver;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 10px 10px 0px 0px;
+}
+div.mensajes_enviados_contenedor_datos_imagenes span {
+  color: rgb(49, 49, 49);
+}
+div.mensajes_enviados_contenedor_datos_imagenes img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+div.mensajes_enviados_contenedor_datos
+  div.mensajes_enviados_contenedor_datos_textos {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0px;
+}
+div.mensajes_enviados_contenedor_datos_textos span {
+  font-weight: bolder;
+}
+div.mensajes_enviados_contenedor_datos_textos span a {
+  text-decoration: none;
+}
+div.mensajes_enviados_contenedor_datos_textos span a:hover {
+  text-decoration: underline;
+}
+div.mensajes_enviados_contenedor_datos
+  div.mensajes_enviados_contenedor_datos_informacion {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+div.mensajes_enviados_contenedor_datos_informacion p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+div.mensajes_enviados_contenedor_datos_informacion img {
+  width: 100%;
+  object-fit: cover;
+}
+/* ------------------------ MENSAJES RECIBIDOS ------------------------ */
+section.mensajes_recibidos {
+  background-color: white;
+  width: 95%;
+  margin: 30px auto 30px auto;
+  border-radius: 10px;
+  padding-bottom: 70px;
+}
+section.mensajes_recibidos p.mensajes_recibidos_parrafo {
+  padding: 10px;
+  font-weight: bolder;
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+}
+section.mensajes_recibidos h1.mensajes_recibidos_titulo {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+section.mensajes_recibidos div.mensajes_recibidos_contenedor {
+  max-width: 700px;
+  width: 90%;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin: 10px auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+div.mensajes_recibidos_contenedor span.mensajes_recibidos_contenedor_total {
+  font-weight: bolder;
+  padding: 10px;
+  margin-top: 10px;
+  display: block;
+  font-size: 17px;
+  text-align: center;
+  width: 100%;
+}
+div.mensajes_recibidos_contenedor div.mensajes_recibidos_contenedor_datos {
+  width: 90%;
+  border-radius: 10px;
+  border: 2px solid black;
+  margin-bottom: 20px;
+}
+div.mensajes_recibidos_contenedor_datos
+  div.mensajes_recibidos_contenedor_datos_imagenes {
+  width: 100%;
+  background-color: silver;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 10px 10px 0px 0px;
+}
+div.mensajes_recibidos_contenedor_datos_imagenes span {
+  color: rgb(49, 49, 49);
+}
+div.mensajes_recibidos_contenedor_datos_imagenes img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+div.mensajes_recibidos_contenedor_datos
+  div.mensajes_recibidos_contenedor_datos_textos {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0px;
+}
+div.mensajes_recibidos_contenedor_datos_textos span {
+  font-weight: bolder;
+}
+div.mensajes_recibidos_contenedor_datos_textos span a {
+  text-decoration: none;
+}
+div.mensajes_recibidos_contenedor_datos_textos span a:hover {
+  text-decoration: underline;
+}
+div.mensajes_recibidos_contenedor_datos
+  div.mensajes_recibidos_contenedor_datos_informacion {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+}
+div.mensajes_recibidos_contenedor_datos_informacion p {
+  text-align: center;
+  margin-bottom: 10px;
+}
+div.mensajes_recibidos_contenedor_datos_informacion img {
+  width: 100%;
+  object-fit: cover;
+}
+/* ------------------------ NOTIFICACIONES ------------------------ */
+section.notificaciones {
+  background-color: white;
+  width: 95%;
+  margin: 30px auto 30px auto;
+  border-radius: 10px;
+  padding-bottom: 70px;
+}
+section.notificaciones h1.notificaciones_titulo {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+section.notificaciones p.notificaciones_parrafo {
+  padding: 10px;
+  font-weight: bolder;
+  text-align: center;
+  display: block;
+  margin: 10px auto;
+}
+section.notificaciones div.notificaciones_datos {
+  max-width: 1000px;
+  width: 90%;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 10px auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+div.notificaciones_datos div.notificaciones_datos_textos {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  gap: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: bolder;
+}
+div.notificaciones_datos_textos a {
+  text-decoration: none;
+}
+
+/* ------------ CLASES JS ------------ */
+div.contenedor_nombre_validacion.ocultar,
+div.contenedor_correo_validacion.ocultar,
+div.contenedor_password_validacion.ocultar,
+div.datos_perfil_formulario_nombre.ocultar,
+div.datos_perfil_formulario_biografia.ocultar,
+div.formulario_mensaje_contenido.ocultar {
+  display: none !important;
+}
+.dropdown .dropdown-content.mostrar {
+  display: block !important;
+}
+div.usuarios_informacion_follow_contenedor
+  span.usuarios_informacion_follow_contenedor_boton.seguir,
+div.usuario_datos_biografia_stats_contenedor_follow_follower
+  span.usuario_datos_biografia_stats_contenedor_follow_follower_boton.seguir {
+  color: green !important;
+}
+div.cabecera_main_centro_inferior_enlaces_derecha_notificaciones
+  span.notificaciones {
+  color: rgb(0, 76, 255);
+}
+div.usuarios_informacion_follow_contenedor
+  span.usuarios_informacion_follow_contenedor_boton.no_seguir,
+div.usuario_datos_biografia_stats_contenedor_follow_follower
+  span.usuario_datos_biografia_stats_contenedor_follow_follower_boton.no_seguir {
+  color: red !important;
+}
+div.home_timeline_contenido_posts_datos_likes span.like,
+div.usuario_posts_datos_likes span.like {
+  color: red !important;
+}
+div.home_timeline_contenido_posts_datos_likes span.unlike,
+div.usuario_posts_datos_likes span.unlike {
+  color: black !important;
+}
+/* ------------ MEDIAS QUERIES ------------ */
+@media only screen and (max-width: 600px) {
+  div.contenedor_nombre_validacion,
+  div.contenedor_correo_validacion,
+  div.contenedor_password_validacion {
+    flex-flow: column wrap !important;
+  }
+  .dropdown .dropbtn {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 250px;
+    margin: 0px auto;
+  }
+  .dropdown .dropdown-content {
+    width: 100%;
+    top: 110px;
+  }
+  div.home_timeline_contenido_posts div.home_timeline_contenido_posts_datos,
+  div.usuario_posts div.usuario_posts_datos {
+    flex-flow: column wrap;
+  }
+  div.usuario_datos div.usuario_datos_biografia {
+    width: 100%;
+  }
+  div.usuario_datos div.usuario_datos_stats {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  section.estadisticas div.estadisticas_posts,
+  section.estadisticas div.estadisticas_likes,
+  section.estadisticas div.estadisticas_following,
+  section.estadisticas div.estadisticas_followers {
+    width: 100%;
+  }
+  div.notificaciones_datos div.notificaciones_datos_textos {
+    flex-flow: column wrap;
+  }
+}
+@media only screen and (max-width: 768px) {
+  header.cabecera_main div.cabecera_main_centro_inferior {
+    flex-flow: column wrap;
+    gap: 10px;
+  }
+  div.cabecera_main_centro_inferior
+    div.cabecera_main_centro_inferior_enlaces_izquierda,
+  div.cabecera_main_centro_inferior
+    div.cabecera_main_centro_inferior_enlaces_derecha {
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px !important;
+  }
+  div.cabecera_main_centro_inferior div.cabecera_main_centro_inferior_opciones {
+    padding: 10px;
+  }
+  section.usuarios div.usuarios_informacion {
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+  div.usuarios_informacion div.usuarios_informacion_datos {
+    flex-flow: column wrap;
+    justify-content: center;
+    text-align: center;
+  }
+  section.usuarios h1.usuarios_titulo,
+  section.usuarios span.usuarios_total,
+  section.usuarios span.usuario_encontrado {
+    text-align: center;
+  }
+  form.datos_perfil_formulario,
+  section.datos div.datos_perfil {
+    width: 100%;
+  }
+  form.datos_perfil_formulario div.datos_perfil_formulario_nombre,
+  form.datos_perfil_formulario div.datos_perfil_formulario_biografia {
+    flex-flow: column wrap;
+    font-weight: normal;
+  }
+  section.estadisticas div.estadisticas_following,
+  section.estadisticas div.estadisticas_followers,
+  section.estadisticas div.estadisticas_posts,
+  section.estadisticas div.estadisticas_likes {
+    align-items: center;
+  }
+  div.estadisticas_following h1.estadisticas_following_titulo,
+  div.estadisticas_followers h1.estadisticas_followers_titulo,
+  div.estadisticas_posts h1.estadisticas_posts_titulo,
+  div.estadisticas_likes h1.estadisticas_likes_titulo {
+    text-align: center;
+    display: block;
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  div.estadisticas_following span.estadisticas_following_total,
+  div.estadisticas_followers span.estadisticas_followers_total,
+  div.estadisticas_posts span.estadisticas_posts_total,
+  div.estadisticas_likes span.estadisticas_likes_total {
+    text-align: center;
+    font-size: 16px;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 992px) {
+  section.home {
+    flex-flow: column wrap;
+    gap: 20px;
+  }
+  section.home div.home_posts {
+    width: 100%;
+    order: 1;
+  }
+  section.home div.home_timeline {
+    width: 100%;
+    order: 2;
+  }
+  div.home_timeline h1.home_timeline_titulo {
+    text-align: center;
+  }
+}
