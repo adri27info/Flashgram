@@ -1281,6 +1281,11 @@ div.mensajes div.mensajes_enviar {
   border: 2px solid black;
   border-radius: 10px;
 }
+div.mensajes_enviar p.mensajes_info {
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
 div.mensajes_enviar p.mensajes_error {
   padding: 10px;
   color: red;

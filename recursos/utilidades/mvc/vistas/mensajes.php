@@ -32,33 +32,41 @@
           unset($_SESSION["conversacion_usuario_exito"]);
         }
         ?>
+        <?php
+        if (count($usuarios) == 1) {
+          echo "<p class='mensajes_info'> Actualmente no hay mas usuarios registrados para enviar mensajes privados </p>";
+        } else {
+        ?>
         <form action="<?= CHILD_ROOT_PATH ?>mensajes/index" method="post" class="formulario_mensaje"
           id="formulario_mensaje" enctype="multipart/form-data">
           <label for="selector_usuario">Para:</label>
           <select name="selector" id="selector_usuario">
             <?php
-            foreach ($usuarios as $key => $objeto) {
-              if ($objeto->correo !== $_SESSION["usuario"]) {
-                echo "<option value='" . $objeto->correo . "_" . $objeto->id_usuario . "'>" . $objeto->nombre . " - " . $objeto->correo . "</option>";
+              foreach ($usuarios as $key => $objeto) {
+                if ($objeto->correo !== $_SESSION["usuario"]) {
+                  echo "<option value='" . $objeto->correo . "_" . $objeto->id_usuario . "'>" . $objeto->nombre . " - " . $objeto->correo . "</option>";
+                }
               }
-            }
-            ?>
+              ?>
           </select>
           <label for="contenido">Mensaje</label>
           <textarea class="formulario_mensaje_contenido" placeholder="Introduce el texto del mensaje" name="contenido"
-            id="contenido"></textarea>
+            id="contenido" maxlength="255"></textarea>
           <div class="formulario_mensaje_contenido ocultar" id="formulario_mensaje_contenido">
             <span class="material-symbols-outlined">
               description
             </span>
-            <span id="error_contenido_validacion" class="error_contenido_validacion">Error [-1, +255]. Debes introducir
-              entre 1 y 255 caracteres</span>
+            <span id="error_contenido_validacion" class="error_contenido_validacion">Error [-2, +255]. Debes introducir
+              entre 2 y 255 caracteres</span>
           </div>
           <label for="imagen">Imagen</label>
           <input type="file" name="imagen" class="formulario_mensaje_imagen" id="imagen">
           <input type="hidden" name="enviar_mensaje_privado">
           <input type="submit" value="Enviar" name="btnMensajePrivado" id="btnMensajePrivado">
         </form>
+        <?php
+        }
+        ?>
       </div>
       <div class="mensajes_enviar_enlaces">
         <a class="mensajes_enlace_enviados" href="<?= CHILD_ROOT_PATH ?>mensajes/enviados">Ver mensajes enviados</a>

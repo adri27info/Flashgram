@@ -4,8 +4,9 @@ const formularioPerfil = document.getElementById("datos_perfil_formulario");
 const nombre = formularioPerfil.nombre;
 const biografia = formularioPerfil.biografia;
 const expresiones = {
-  nombre: /^[a-zA-ZÀ-ÿ]{2,30}$/,
-  biografia: /^[^'*]{2,255}$/,
+  nombre:
+    /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+\s?[a-zA-ZÀ-ÿ\u00f1\u00d1]+\s?[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/,
+  biografia: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]{2,}.*/,
 };
 const validaciones = {
   nombre: false,

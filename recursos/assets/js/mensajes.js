@@ -3,7 +3,7 @@ import * as home from "./main.js";
 const formularioMensaje = document.getElementById("formulario_mensaje");
 const contenido = formularioMensaje.contenido;
 const expresiones = {
-  contenido: /^[^'*]{1,255}$/,
+  contenido: /^[a-zA-ZÀ-ÿ\u00f1\u00d1]{2,}.*/,
 };
 const validaciones = {
   contenido: false,

@@ -18,14 +18,14 @@
   <form action="<?= CHILD_ROOT_PATH ?>auth/login" method="post" class="formulario_registro" id="formulario_registro">
     <h2>Registrarse</h2>
     <label for="nombre">Nombre</label>
-    <input type="text" name="nombre" placeholder="Introduce tu nombre" id="nombre">
+    <input type="text" name="nombre" placeholder="Introduce tu nombre" id="nombre" maxlength="30">
     <div class="contenedor_nombre_validacion ocultar" id="contenedor_nombre_validacion">
       <span class="material-symbols-outlined"> person </span>
-      <span id="error_nombre_validacion" class="error_nombre_validacion">Error [-2, +30]. Debes
-        introducir entre 2 y 30 caracteres</span>
+      <span id="error_nombre_validacion" class="error_nombre_validacion">Error [-3, +30]. Debes
+        introducir entre 3 y 30 caracteres</span>
     </div>
     <label for="correo">Correo</label>
-    <input type="text" name="correo" placeholder="Introduce tu correo" id="correo">
+    <input type="text" name="correo" placeholder="Introduce tu correo" id="correo" maxlength="50">
     <div class="contenedor_correo_validacion ocultar" id="contenedor_correo_validacion">
       <span class="material-symbols-outlined"> email </span>
       <span id="error_correo_validacion" class="error_correo_validacion">Error, debes introducir un correo que sea

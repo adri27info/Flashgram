@@ -35,15 +35,15 @@
         id="datos_perfil_formulario" enctype="multipart/form-data">
         <label for="datos_perfil_formulario_nombre">Nombre</label>
         <input type="text" name="nombre" class="datos_perfil_formulario_nombre" id="nombre"
-          placeholder="Introduce el nombre">
+          placeholder="Introduce el nombre" maxlength="30">
         <div class="datos_perfil_formulario_nombre ocultar">
           <span class="material-symbols-outlined"> person </span>
-          <span id="error_nombre_validacion" class="error_nombre_validacion">Error [-2, +30]. Debes
-            introducir entre 2 y 30 caracteres</span>
+          <span id="error_nombre_validacion" class="error_nombre_validacion">Error [-3, +30]. Debes
+            introducir entre 3 y 30 caracteres</span>
         </div>
         <label for="datos_perfil_formulario_biografia">Biografia</label>
         <textarea class="datos_perfil_formulario_biografia" id="biografia"
-          placeholder="Introduce el texto de la biografia" name="biografia"></textarea>
+          placeholder="Introduce el texto de la biografia" name="biografia" maxlength="255"></textarea>
         <div class="datos_perfil_formulario_biografia ocultar">
           <span class="material-symbols-outlined">
             description
